@@ -27,4 +27,4 @@ root	ALL=(ALL:ALL) ALL
 #includedir /etc/sudoers.d
 
 ## user is allowed to execute halt and reboot 
-mopidy ALL=NOPASSWD: /sbin/halt, /sbin/reboot, /sbin/poweroff, /sbin/shutdown, /etc/init.d/mopidy
+mopidy ALL=NOPASSWD: /sbin/halt, /sbin/reboot, /sbin/poweroff, /sbin/shutdown, /etc/init.d/mopidy, /usr/local/lib/python2.7/dist-packages/mopidy_iris/system.sh

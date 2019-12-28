@@ -31,40 +31,18 @@ Features
 Installation
 ============
 
-1. Download the `latest release <https://github.com/pimusicbox/pimusicbox/releases>`_.
+1. Download Raspbian lite
+   https://www.raspberrypi.org/downloads/raspbian/
 2. Write the image to your SD card. See `here <https://www.raspberrypi.org/documentation/installation/installing-images/README.md>`_ for details.
-3. Customise the /boot/config/settings.ini file.
-4. Boot your Raspberry Pi and wait for PiMusicbox to start.
-5. Finish configuring the system using the web settings.  
+3. Boot your Raspberry Pi and wait for it to start.
+4. Run the following commands
 
+   cd /home/pi
+   sudo apt install git
+   git clone https://github.com/asrashley/pimusicbox.git
+   cd pimusicbox
+   sudo ./create_musicbox.sh
 
-Creating an image
-=================
-
-If you want to build an image from source, note that the current v0.7 image is an
-incremental update of v0.6 and can be generated as follows::
-
-    # 1. Install prerequisite packages (probably not an exhaustive list, sorry....)
-    sudo apt-get install git coreutils e2fsprogs zerofree util-linux qemu-user-static latexmk python-sphinx
-
-    # 2. Download and unzip very latest project source files (use master.zip for current release)
-    wget https://github.com/pimusicbox/pimusicbox/archive/develop.zip
-    unzip develop.zip && mv pimusicbox-develop src
-
-    # 3. Download and unzip base v0.6 image
-    wget https://github.com/pimusicbox/pimusicbox/releases/download/v0.6.0/pimusicbox-0.6.0.zip
-    unzip pimusicbox-0.6.0.zip && mv musicbox0.6.img musicbox.img
-
-    # 4. Enlarge image so there is free space to work in 
-    ./src/makeimage.sh musicbox.img bigger
-
-    # 5. Run update script within base image (requires sudo).
-    ./src/chroot.sh musicbox.img create_musicbox0.7.sh
-
-    # 6. Go have a cup of tea/coffee while you wait...
-
-    # 7. Shrink the image and other finishing touches
-    ./src/makeimage.sh musicbox.img finalise
 
 
 Project resources
